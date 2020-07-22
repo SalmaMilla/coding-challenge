@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/menu" component={Menu} />
+        <Route path="/coding-challenge" component={Menu} />
         <Route path="/default-filter" component={DefaultFilter} />
         <Route path="/user-filters" component={UserFilters} />
       </Switch>
