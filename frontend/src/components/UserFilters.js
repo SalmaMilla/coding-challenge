@@ -67,7 +67,6 @@ export const UserFilters = () => {
                     })
                 })
                 if (response.ok) {
-                    timeout(20000);
                     const data = await response.json();
                     console.log("Response: " + JSON.stringify(data.response));
                     setUrl('');
@@ -125,10 +124,11 @@ export const UserFilters = () => {
             console.log("entra a sobel");
             setKernelSobelErrorMesg(true);
         }
-    }   
+    } 
 
-    function timeout(delay) {
-        return new Promise( res => setTimeout(res, delay) );
+    const changeDiv = () => {
+        setDisplayResultDiv(false);
+        setDisplayOptionsDiv(true);
     }
 
     return (
@@ -234,6 +234,14 @@ export const UserFilters = () => {
                 </div>
             </div>
             <div className="container3" value="result" style={{display: displayResultDiv ? 'block' : 'none' }}>
+                <div className="row">
+                    <div className="col-3"></div>
+                    <div className="col-3"></div>
+                    <div className="col-3"></div>
+                    <div className="col-3" style={{textAlignLast:"right"}}>
+                        <button className="btn" style={{backgroundColor:"rgb(32, 178, 170", color:"#FFFFFF", fontFamily:"Source Sans Pro Italic"}} onClick={changeDiv}>Try again</button>
+                    </div>
+                </div>
                 <div className="row" style={{marginTop: "20px"}}>
                     <div className="col-md-6, col-lg-6" style={{textAlignLast:"center"}}>
                         <img src={originalImage} alt="Logo" width="650px" height="400px" style={{border: "black 7px solid"}}/>
