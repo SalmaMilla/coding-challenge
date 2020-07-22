@@ -9,7 +9,7 @@ from os import remove
 app = Flask(__name__)
 root_path = os.getcwd()
 path = root_path.split('backend')
-frontend_path = path[0] + 'frontend/src/components/'
+frontend_path = path[0] + 'frontend/src/components/img/'
 
 #Allow comunication between React and Python server 
 CORS(app)
